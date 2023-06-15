@@ -1,3 +1,5 @@
+`forked from TheOdinProject/javascript-exercises`
+--- Contains my completed exercises ---
 # JavaScript Exercises
 
 These JavaScript exercises are intended to complement the JavaScript content on The Odin Project (TOP). They should only be done when instructed during the course of the curriculum.
