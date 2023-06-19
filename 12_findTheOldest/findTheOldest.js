@@ -1,10 +1,16 @@
 const findTheOldest = function (people) {
-  target = ""
-  targetAge = 0
+  const currentYear = new Date().getFullYear();
+  let age = 0;
+  let target = '';
+  let targetAge = 0;
   people.forEach(item => {
-    let age = item.yearOfDeath - item.yearOfBirth;
+    if (item.yearOfDeath) {
+      age = item.yearOfDeath - item.yearOfBirth;
+    } else {
+      age = currentYear - item.yearOfBirth;
+    }
     if (age > targetAge) {
-      target = item.name;
+      target = item;
       targetAge = age;
     }
   });
@@ -13,24 +19,3 @@ const findTheOldest = function (people) {
 
 // Do not edit below this line
 module.exports = findTheOldest;
-
-
-const people = [
-  {
-    name: "Carly",
-    yearOfBirth: 1942,
-    yearOfDeath: 1970,
-  },
-  {
-    name: "Ray",
-    yearOfBirth: 1962,
-    yearOfDeath: 2011,
-  },
-  {
-    name: "Jane",
-    yearOfBirth: 1912,
-    yearOfDeath: 1941,
-  },
-]
-
-console.log(findTheOldest(people));
